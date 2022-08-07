@@ -12,6 +12,10 @@
     <%= render 'layouts/header' %>
       <main>
         <p id="notice"><%= notice %></p>
+        <% if content_for?(:body_attributes) %>
+          <%= yield(:body_attributes) %>
+        <% end %>
+        
         <%= yield %>
       </main>
     <%= render 'layouts/footer' %>
