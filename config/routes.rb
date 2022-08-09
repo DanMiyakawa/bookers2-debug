@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root :to =>"homes#top"
   get "home/about"=>"homes#about"
   get "search" => "searches#search"
+  get "search_book" => "books#search_book"
 
 
   resources :books, only: [:index,:show,:edit,:create,:destroy,:update]do
@@ -28,6 +29,6 @@ Rails.application.routes.draw do
   
   resources :chats, only: [:show, :create]
   resources :groups, only: [:index, :show, :edit, :create, :update, :new, :show]
-  
+  get "search_book" => "books#search_book"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
